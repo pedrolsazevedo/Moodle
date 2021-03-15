@@ -223,7 +223,8 @@ set -ex
 
     if [ ! -d /moodle/html/moodle ]; then
         # downloading moodle only if /moodle/html/moodle does not exist -- if it exists, user should populate it in advance correctly as below. This is to reduce template deployment time.
-        /usr/bin/curl -k --max-redirs 10 https://github.com/moodle/moodle/archive/'$moodleVersion'.zip -L -o moodle.zip
+        ## /usr/bin/curl -k --max-redirs 10 https://github.com/moodle/moodle/archive/.zip -L -o moodle.zip
+				/usr/bin/curl -k --max-redirs 10 https://github.com/moodle/moodle/archive/v3.10.2.zip L -o moodle.zip
         /usr/bin/unzip -q moodle.zip
         /bin/mv '$moodleUnzipDir' /moodle/html/moodle
     fi
