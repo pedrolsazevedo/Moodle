@@ -39,7 +39,7 @@
 				"parameters": {
 					"_artifactsLocation": { "value": "[parameters('_artifactsLocation')]" },
 					"_artifactsLocationSasToken": { "value": "[parameters('_artifactsLocationSasToken')]" },
-					"redisDeploySwitch": { "value": false },
+					"redisDeploySwitch": { "value": true },
 					"sshPublicKey": { "value": "[parameters('sshPublicKey')]" },
 					"siteURL": { "value": "[parameters('siteURL')]" },
 					"autoscaleVmSku": { "value": "Standard_DS1_v2" },
