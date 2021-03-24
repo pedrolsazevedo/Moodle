@@ -225,7 +225,6 @@ set -ex
         # downloading moodle only if /moodle/html/moodle does not exist -- if it exists, user should populate it in advance correctly as below. This is to reduce template deployment time.
         /usr/bin/curl -k --max-redirs 10 https://github.com/moodle/moodle/archive/'$moodleVersion'.zip -L -o moodle.zip
 		/usr/bin/unzip -q moodle.zip
-        sed -i 's/VENDOR name=\"mysql\" version=\"5.7\"/VENDOR name=\"mysql\" version=\"5.6\"/g' '$moodleUnzipDir'/admin/environment.xml
         /bin/mv '$moodleUnzipDir' /moodle/html/moodle
     fi
 
@@ -280,7 +279,9 @@ set -ex
     cd /moodle
     rm -rf /moodle/tmp
     ' > /tmp/setup-moodle.sh 
-
+    # try to bypass mysql restriction due azure usign gw and showing wrong version on connection
+    /usr/bin/sed -i 's/VENDOR name=\"mysql\" version=\"5.7\"/VENDOR name=\"mysql\" version=\"5.6\"/g' /moodle/html/moodle/admin/environment.xml
+    
     chmod 755 /tmp/setup-moodle.sh
     /tmp/setup-moodle.sh >> /tmp/setupmoodle.log
 
