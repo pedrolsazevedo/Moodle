@@ -288,14 +288,13 @@ set -ex
     fi
     cd /moodle
     rm -rf /moodle/tmp
-    /usr/bin/sed -i 's/VENDOR name=\"mysql\" version=\"5.7\"/VENDOR name=\"mysql\" version=\"5.6\"/g' /moodle/html/moodle/admin/environment.xml
     ' > /tmp/setup-moodle.sh 
 
     chmod 755 /tmp/setup-moodle.sh
     /tmp/setup-moodle.sh >> /tmp/setupmoodle.log
 
     # try to bypass mysql restriction due azure usign gw and showing wrong version on connection
-    
+    ## /usr/bin/sed -i 's/VENDOR name=\"mysql\" version=\"5.7\"/VENDOR name=\"mysql\" version=\"5.6\"/g' /moodle/html/moodle/admin/environment.xml
 
     # Build nginx config
     cat <<EOF > /etc/nginx/nginx.conf
