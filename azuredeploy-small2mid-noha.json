@@ -21,7 +21,13 @@
                 "description": "ssh public key"
             },
             "type": "string"
-        }
+        },
+        "siteURL": {
+			"metadata": {
+				"description": "Moodle Instance URL"
+			},
+			"type": "string"
+		}
     },
     "resources": [
         {
@@ -37,7 +43,8 @@
                     "sshPublicKey":                 { "value": "[parameters('sshPublicKey')]" },
                     "mysqlPgresVcores":             { "value": 8 },
                     "mysqlPgresStgSizeGB":          { "value": 128 },
-                    "fileServerDiskSize":           { "value": 128 }
+                    "fileServerDiskSize":           { "value": 128 },
+                    "siteURL": { "value": "[parameters('siteURL')]" }
                 },
                 "templateLink": {
                     "uri": "[concat(parameters('_artifactsLocation'), 'azuredeploy.json', parameters('_artifactsLocationSasToken'))]"
