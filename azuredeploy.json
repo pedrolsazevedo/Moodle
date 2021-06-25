@@ -139,7 +139,7 @@
             "type": "string"
         },
         "controllerVmSku": {
-            "defaultValue": "Standard_DS1_v2",
+            "defaultValue": "Standard_DS2_v2",
             "metadata": {
                 "description": "VM size for the controller VM"
             },
@@ -286,7 +286,7 @@
                 "5.7",
                 "8.0"
             ],
-            "defaultValue": "5.7",
+            "defaultValue": "8.0",
             "metadata": {
                 "description": "Mysql version"
             },
