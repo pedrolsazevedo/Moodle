@@ -800,9 +800,9 @@ EOF
    fi
 
   echo "### Script End `date`###"
-} 2>&1 | tee /tmp/setup.log
+
+sudo locale-gen pt_BR.UTF-8
 
 sudo update-locale LANG="pt_BR.UTF-8" LANGUAGE="pt_BR"
 
-sudo reboot
-
+} 2>&1 | tee /tmp/setup.log
