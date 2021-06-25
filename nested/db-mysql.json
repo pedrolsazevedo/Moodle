@@ -41,15 +41,17 @@
             "location": "[parameters('moodleCommon').location]",
             "name": "[parameters('moodleCommon').serverName]",
             "properties": {
+                "collation": "utf8mb4_general_ci",
+                "charset": "UTF8MB4",
                 "administratorLogin": "[parameters('moodleCommon').dbLogin]",
                 "administratorLoginPassword": "[parameters('moodleCommon').dbLoginPassword]",
                 "sslEnforcement": "[parameters('moodleCommon').sslEnforcement]",
                 "storageProfile": {
                     "storageMB": "[mul(parameters('moodleCommon').mysqlPgresStgSizeGB, 1024)]",
-                    "backupRetentionDays": "35",
+                    "backupRetentionDays": 35,
                     "geoRedundantBackup": "Enabled"
                 },
-                "collation_server": "utf8mb4_general_ci",
+
                 "version": "[parameters('moodleCommon').mysqlVersion]"
             },
             "sku": {
