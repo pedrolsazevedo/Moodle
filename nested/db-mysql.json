@@ -49,6 +49,7 @@
                     "backupRetentionDays": "35",
                     "geoRedundantBackup": "Enabled"
                 },
+                "collation": "utf8mb4_general_ci",
                 "version": "[parameters('moodleCommon').mysqlVersion]"
             },
             "sku": {
