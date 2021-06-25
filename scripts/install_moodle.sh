@@ -1048,4 +1048,8 @@ EOF
 
    echo "### Script End `date`###"
 
+   sudo locale-gen pt_BR.UTF-8
+   sudo update-locale LANG="pt_BR.UTF-8" LANGUAGE="pt_BR"
+   sudo timedatectl set-timezone America/Sao_Paulo
+
 }  2>&1 | tee /tmp/install.log
