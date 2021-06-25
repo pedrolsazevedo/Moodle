@@ -31,7 +31,7 @@ Type: string
 
 Possible Values: null
 
-Default: https://raw.githubusercontent.com/Azure/Moodle/master/
+Default: https://raw.psilvaazevedo/Moodle/master/
 
 
 ### _artifactsLocationSasToken
