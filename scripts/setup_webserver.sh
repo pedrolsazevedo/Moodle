@@ -482,6 +482,7 @@ EOF
    sed -i "s/;opcache.enable.*/opcache.enable = 1/" $PhpIni
    sed -i "s/;opcache.memory_consumption.*/opcache.memory_consumption = 512/" $PhpIni
    sed -i "s/;opcache.max_accelerated_files.*/opcache.max_accelerated_files = 20000/" $PhpIni
+   sed -i "s/;date.timezone.*/date.timezone = America\/Sao_Paulo/" $PhpIni
     
    # Remove the default site. Moodle is the only site we want
    rm -f /etc/nginx/sites-enabled/default
@@ -800,3 +801,8 @@ EOF
 
   echo "### Script End `date`###"
 } 2>&1 | tee /tmp/setup.log
+
+sudo update-locale LANG="pt_BR.UTF-8" LANGUAGE="pt_BR"
+
+sudo reboot
+
