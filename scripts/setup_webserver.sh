@@ -246,6 +246,7 @@ http {
   ssl_prefer_server_ciphers off;
   #adding ssl ciphers
   ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+  charset off;
 
   gzip on;
   gzip_disable "msie6";
@@ -483,6 +484,7 @@ EOF
    sed -i "s/;opcache.memory_consumption.*/opcache.memory_consumption = 512/" $PhpIni
    sed -i "s/;opcache.max_accelerated_files.*/opcache.max_accelerated_files = 20000/" $PhpIni
    sed -i "s/;date.timezone.*/date.timezone = America\/Sao_Paulo/" $PhpIni
+   sed -i "s/default_charset.*/;default_charset = "UTF-8"/" $PhpIni
     
    # Remove the default site. Moodle is the only site we want
    rm -f /etc/nginx/sites-enabled/default
